@@ -1,0 +1,23 @@
+package cc.mrbird.febs;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import tk.mybatis.spring.annotation.MapperScan;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@SpringBootApplication
+@EnableTransactionManagement
+@EnableScheduling
+@EnableAsync
+@EnableSwagger2  //@Swagger2 表示启动Swagger使用
+@MapperScan("cc.mrbird.febs.*.dao")
+public class FebsApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(FebsApplication.class, args);
+    }
+
+}
